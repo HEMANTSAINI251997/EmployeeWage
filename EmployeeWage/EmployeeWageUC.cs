@@ -10,33 +10,39 @@ namespace EmployeeWage
     {
         public void EmployeeWageFun()
         {
-            int is_present = 1;
-            int is_parttime = 2;
+            const int is_present = 1;
+            const int is_parttime = 2;
             int half_day = 4;
             int full_day_hr = 8;
             int wage_per_hr = 20;
             int emp_hr = 0;
             int part_time = 8;
+            int totalemphr = 0;
             Random random = new Random();
             int check = random.Next(0, 3);
+            switch (check)
+            {
+                case is_present:
+                    Console.WriteLine("Employee is Present");
+                    emp_hr = full_day_hr;
+                    break;
+                case is_parttime:
+                    Console.WriteLine("Employee is on Part Time");
+                    emp_hr = half_day;
+                    break;
+                default:
+                    Console.WriteLine("Employee is Absent");
+                    emp_hr = 0;
+                    break;
 
-            if (check == is_present)
-            {
-                Console.WriteLine("Employee is Present");
-                emp_hr = full_day_hr;
-            }
-            else if (check == is_parttime)
-            {
-                Console.WriteLine("Employee is on Part Time");
-                emp_hr = half_day;
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-                emp_hr = 0;
+
             }
             int totalwage = emp_hr * wage_per_hr;
             Console.WriteLine("Total wage of Employee is = " + totalwage);
+
+
+
         }
+
     }
 }
