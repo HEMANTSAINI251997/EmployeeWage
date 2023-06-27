@@ -11,16 +11,17 @@ namespace EmployeeWage
         const int is_present = 1;
         const int is_parttime = 2;
         public void EmployeeWageFun()
-        {
-
+        { 
             int half_day = 4;
             int full_day_hr = 8;
             int wage_per_hr = 20;
             int emp_hr = 0;
-            //int part_time = 8;
             int totalemphr = 0;
+            int totaldays = 0;
+            int totalwage = 0;
             Random random = new Random();
-            for (int day = 0; day <= 20; day++)
+
+            while (totalemphr < 100 && totaldays < 20)
             {
                 int check = random.Next(0, 3);
                 switch (check)
@@ -34,16 +35,18 @@ namespace EmployeeWage
                     default:
                         emp_hr = 0;
                         break;
-
-
                 }
-                totalemphr += emp_hr;              
-            }
-            Console.WriteLine("Total Employee Hours for 20 Days =" + totalemphr);
-            int totalwage = totalemphr * wage_per_hr;
-            Console.WriteLine("Total wage of Employee 20 days is = " + totalwage);
-        }
 
+                totalemphr += emp_hr;
+                totaldays++;
+                int dailyWage = emp_hr * wage_per_hr;
+                totalwage += dailyWage;
+            }
+
+            Console.WriteLine("Total Employee Hours for 20 Days = " + totalemphr);
+            Console.WriteLine("Total Wage of Employee for 20 Days = " + totalwage);
+        }
     }
 }
+
 
