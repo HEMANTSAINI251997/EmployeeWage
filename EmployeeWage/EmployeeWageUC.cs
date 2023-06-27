@@ -11,16 +11,24 @@ namespace EmployeeWage
         public void EmployeeWageFun()
         {
             int is_present = 1;
+            int is_parttime = 2;
+            int half_day = 4;
             int full_day_hr = 8;
             int wage_per_hr = 20;
             int emp_hr = 0;
+            int part_time = 8;
             Random random = new Random();
-            int check = random.Next(0, 2);
+            int check = random.Next(0, 3);
 
             if (check == is_present)
             {
                 Console.WriteLine("Employee is Present");
                 emp_hr = full_day_hr;
+            }
+            else if (check == is_parttime)
+            {
+                Console.WriteLine("Employee is on Part Time");
+                emp_hr = half_day;
             }
             else
             {
