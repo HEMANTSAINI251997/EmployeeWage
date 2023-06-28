@@ -10,7 +10,7 @@ namespace EmployeeWage
     {
         const int is_present = 1;
         const int is_parttime = 2;
-        public void EmployeeWageFun()
+        public static void EmployeeWageFun()
         { 
             int half_day = 4;
             int full_day_hr = 8;
@@ -21,7 +21,7 @@ namespace EmployeeWage
             int totalwage = 0;
             Random random = new Random();
 
-            while (totalemphr < 100 && totaldays < 20)
+            while (totalemphr <= 100 && totaldays <= 20)
             {
                 int check = random.Next(0, 3);
                 switch (check)

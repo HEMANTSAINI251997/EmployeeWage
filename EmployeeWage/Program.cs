@@ -11,8 +11,9 @@ namespace EmployeeWage
         static void Main(string[] args)
         {
             Console.WriteLine( "WELCOME TO EMPLOYEE WAGE COMPUTATION" );
-            EmployeeWageUC employeeWageUC = new EmployeeWageUC();
-            employeeWageUC.EmployeeWageFun();
+            //EmployeeWageUC employeeWageUC = new EmployeeWageUC();
+            //employeeWageUC.EmployeeWageFun();
+            EmployeeWageUC.EmployeeWageFun();
 
         }
     }
